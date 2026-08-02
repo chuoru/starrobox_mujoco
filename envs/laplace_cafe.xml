@@ -1,0 +1,63 @@
+<mujoco model="laplace_cafe">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <material name="Opaque(202,209,238)" specular="0.5" shininess="0.5" rgba="0.792157 0.819608 0.933333 1.0"/>
+    <material name="Mahogany" specular="0.5" shininess="0.5" rgba="0.400000 0.210000 0.150000 1.0"/>
+    <material name="Marble_(White)" specular="0.5" shininess="0.5" rgba="0.921569 0.921569 0.909804 1.0"/>
+    <material name="Powder_Coat_(Black)" specular="0.5" shininess="0.5" rgba="0.098039 0.098039 0.098039 1.0"/>
+    <material name="Powder_Coat_(Green)" specular="0.5" shininess="0.5" rgba="0.266667 0.588235 0.282353 1.0"/>
+    <material name="Glass_-_Light_Color_(Blue)" specular="0.5" shininess="0.5" rgba="0.423529 0.768627 0.854902 1.0"/>
+    <material name="Fabric_(Yellow)" specular="0.5" shininess="0.5" rgba="0.870588 0.752941 0.219608 1.0"/>
+    <material name="Steel_-_Satin" specular="0.5" shininess="0.5" rgba="0.627451 0.627451 0.627451 1.0"/>
+    <material name="Glass_-_Light_Color" specular="0.5" shininess="0.5" rgba="0.098039 0.098039 0.098039 1.0"/>
+    <material name="Powder_Coat_(Grey)" specular="0.5" shininess="0.5" rgba="0.701961 0.701961 0.701961 1.0"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_1.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_2.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_3.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_4.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_5.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_6.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_7.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_8.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="../assets/meshes/objects/laplace_cafe/laplace_cafe_9.obj" scale="0.01 0.01 0.01"/>
+  </asset>
+  <visual>
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+  </visual>
+  <worldbody>
+    <light name="ceiling_light_1" pos="0 -0.3 1.5" dir="0 0 -1" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" cutoff="75" castshadow="false"/>
+    <light name="ceiling_light_2" pos="1.25 -0.3 1.5" dir="0 0 -1" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" cutoff="75" castshadow="false"/>
+    <light name="ceiling_light_3" pos="0 -1.8 1.5" dir="0 0 -1" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" cutoff="75" castshadow="false"/>
+    <light name="ceiling_light_4" pos="1.25 -1.8 1.5" dir="0 0 -1" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" cutoff="75" castshadow="false"/>
+    <light name="ceiling_light_5" pos="0 -3.3 1.5" dir="0 0 -1" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" cutoff="75" castshadow="false"/>
+    <light name="ceiling_light_6" pos="1.25 -3.3 1.5" dir="0 0 -1" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" cutoff="75" castshadow="false"/>
+    <geom name="floor" type="plane" pos="0 0 0" size="0 0 0.05" material="groundplane"/>
+    <body name="laplace_cafe" quat="0.7071068 0.7071068 0 0">
+      <geom type="box" pos="1.26109274 1.345 0.60891079" size="0.11 0.065 0.00005" material="Powder_Coat_(Grey)" class="visual"/>
+      <geom mesh="laplace_cafe_1" material="Glass_-_Light_Color" class="visual"/>
+      <geom mesh="laplace_cafe_2" material="Steel_-_Satin" class="visual"/>
+      <geom mesh="laplace_cafe_3" material="Fabric_(Yellow)" class="visual"/>
+      <geom mesh="laplace_cafe_4" material="Glass_-_Light_Color_(Blue)" class="visual"/>
+      <geom mesh="laplace_cafe_5" material="Powder_Coat_(Green)" class="visual"/>
+      <geom mesh="laplace_cafe_6" material="Powder_Coat_(Black)" class="visual"/>
+      <geom mesh="laplace_cafe_7" material="Marble_(White)" class="visual"/>
+      <geom mesh="laplace_cafe_8" material="Mahogany" class="visual"/>
+      <geom mesh="laplace_cafe_9" material="Opaque(202,209,238)" class="visual"/>
+      <geom type="box" pos="1.26109274 1.345 0.60891079" size="0.11 0.065 0.00005" class="collision"/>
+    </body>
+  </worldbody>
+
+  <include file="../models/mz07/arm.xml"/>
+  <include file="../models/mz07/arm_2.xml"/>
+</mujoco>

@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="mz07">
+  <!-- Converted from nachi_project/nachi_description/robots/mz07/urdf/mz07.urdf.
+       All lengths are the URDF's native meters this repo's laplace_cafe scene
+       (and both mz07 instances placed in it) are now consistently in meters too,
+       so no length scaling is applied here.
+
+       Visual geoms use the real textured meshes (converted from the source
+       DAE files, which MuJoCo can't load directly, via trimesh to UV-mapped
+       OBJ + PNG under assets/meshes/robots/mz07/visual/<link>/). Collision
+       geoms (link_5, link_6 only the rest never had collision enabled)
+       keep using the simpler untextured STL meshes. -->
+  <compiler angle="radian" />
+  <asset>
+    <texture type="2d" name="mz07_base_link_tex" file="../../assets/meshes/robots/mz07/visual/base_link/material_0.png" />
+    <material name="mz07_base_link_mat" texture="mz07_base_link_tex" texuniform="true" />
+    <mesh name="mz07_vis_base_link" file="../../assets/meshes/robots/mz07/visual/base_link/base_link.obj" />
+
+    <texture type="2d" name="mz07_link_1_tex" file="../../assets/meshes/robots/mz07/visual/link_1/material_0.png" />
+    <material name="mz07_link_1_mat" texture="mz07_link_1_tex" texuniform="true" />
+    <mesh name="mz07_vis_link_1" file="../../assets/meshes/robots/mz07/visual/link_1/link_1.obj" />
+
+    <texture type="2d" name="mz07_link_2_tex" file="../../assets/meshes/robots/mz07/visual/link_2/material_0.png" />
+    <material name="mz07_link_2_mat" texture="mz07_link_2_tex" texuniform="true" />
+    <mesh name="mz07_vis_link_2" file="../../assets/meshes/robots/mz07/visual/link_2/link_2.obj" />
+
+    <texture type="2d" name="mz07_link_3_tex" file="../../assets/meshes/robots/mz07/visual/link_3/material_0.png" />
+    <material name="mz07_link_3_mat" texture="mz07_link_3_tex" texuniform="true" />
+    <mesh name="mz07_vis_link_3" file="../../assets/meshes/robots/mz07/visual/link_3/link_3.obj" />
+
+    <texture type="2d" name="mz07_link_4_tex" file="../../assets/meshes/robots/mz07/visual/link_4/material_0.png" />
+    <material name="mz07_link_4_mat" texture="mz07_link_4_tex" texuniform="true" />
+    <mesh name="mz07_vis_link_4" file="../../assets/meshes/robots/mz07/visual/link_4/link_4.obj" />
+
+    <texture type="2d" name="mz07_link_5_tex" file="../../assets/meshes/robots/mz07/visual/link_5/material_0.png" />
+    <material name="mz07_link_5_mat" texture="mz07_link_5_tex" texuniform="true" />
+    <mesh name="mz07_vis_link_5" file="../../assets/meshes/robots/mz07/visual/link_5/link_5.obj" />
+    <mesh name="mz07_link_5" file="../../assets/meshes/robots/mz07/link_5.stl" />
+
+    <texture type="2d" name="mz07_link_6_tex" file="../../assets/meshes/robots/mz07/visual/link_6/material_0.png" />
+    <material name="mz07_link_6_mat" texture="mz07_link_6_tex" texuniform="true" />
+    <mesh name="mz07_vis_link_6" file="../../assets/meshes/robots/mz07/visual/link_6/link_6.obj" />
+    <mesh name="mz07_link_6" file="../../assets/meshes/robots/mz07/link_6.stl" />
+
+    <texture type="2d" name="mz07_gripper_tex" builtin="flat" rgb1="0.55 0.55 0.55" width="256" height="256" />
+    <material name="mz07_gripper_mat" texture="mz07_gripper_tex" rgba="0.75 0.75 0.75 1" />
+    <mesh name="mz07_iai_upper_body" file="../../assets/meshes/gripper/iai/upper_body.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mz07_iai_lower_body" file="../../assets/meshes/gripper/iai/lower_body.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mz07_iai_left_pinch" file="../../assets/meshes/gripper/iai/left_pinch.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mz07_iai_right_pinch" file="../../assets/meshes/gripper/iai/right_pinch.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mz07_iai_side" file="../../assets/meshes/gripper/iai/gripper_side.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mz07_iai_claw" file="../../assets/meshes/gripper/iai/claw.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mz07_iai_gripper_cover" file="../../assets/meshes/gripper/iai/gripper_cover.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mz07_iai_connect_part" file="../../assets/meshes/gripper/iai/connect_part.stl" scale="0.001 0.001 0.001" />
+
+    <texture type="2d" name="mz07_elp_tex" builtin="flat" rgb1="0.15 0.15 0.15" width="256" height="256" />
+    <material name="mz07_elp_mat" rgba="0.2 0.2 0.2 1" />
+    <mesh name="mz07_elp_cam_mesh" file="../../assets/meshes/camera/elp_cam.stl" scale="0.001 0.001 0.001" />
+  </asset>
+
+  <worldbody>
+    <body name="mz07/mz07_root_frame" pos="0.62109384 -1.80940707 0.890295" quat="1 0 0 0">
+      <body name="mz07/mz07_body">
+        <body name="mz07/base_link">
+          <inertial pos="0 0 0" mass="9.522365" fullinertia="0.144495 0.183352 0.079873 -9e-06 -0.03076 -3.7e-05" />
+          <geom name="mz07/geom_0_" type="mesh" contype="0" conaffinity="0" group="2" density="0" material="mz07_base_link_mat" mesh="mz07_vis_base_link" />
+          <body name="mz07/link_1" pos="0 0 0.197" gravcomp="1">
+            <inertial pos="0 0 0" mass="5.61696" fullinertia="0.087433 0.073064 0.039829 0.0 0.013287 1.9e-05" />
+            <joint name="mz07/j1" pos="0 0 0" axis="0 0 1" range="-2.96705981 2.96705981" damping="0.7" frictionloss="0.7" armature="1" actuatorgravcomp="true" />
+            <geom name="mz07/geom_1_" type="mesh" contype="0" conaffinity="0" group="2" density="0" material="mz07_link_1_mat" mesh="mz07_vis_link_1" />
+            <body name="mz07/link_2" pos="0.05 0 0.148" gravcomp="1">
+              <inertial pos="0 0 0" mass="7.350069" fullinertia="0.299465 0.279554 0.035911 -1e-05 -0.012735 5.3e-05" />
+              <joint name="mz07/j2" pos="0 0 0" axis="0 1 0" range="-1.39626344 2.356194555" damping="0.7" frictionloss="0.7" armature="1" actuatorgravcomp="true" />
+              <geom name="mz07/geom_2_" type="mesh" contype="0" conaffinity="0" group="2" density="0" material="mz07_link_2_mat" mesh="mz07_vis_link_2" />
+              <body name="mz07/link_3" pos="0 0 0.33" gravcomp="1">
+                <inertial pos="0 0 0" mass="3.724767" fullinertia="0.011733 0.019531 0.014154 4.3e-05 0.000461 2.4e-05" />
+                <joint name="mz07/j3" pos="0 0 0" axis="0 1 0" range="-3.14159274 0.802851478" damping="0.7" frictionloss="0.7" armature="0.5" actuatorgravcomp="true" />
+                <geom name="mz07/geom_3_" type="mesh" contype="0" conaffinity="0" group="2" density="0" material="mz07_link_3_mat" mesh="mz07_vis_link_3" />
+                <body name="mz07/link_4" pos="0.09 0 0.045" gravcomp="1">
+                  <inertial pos="0 0 0" mass="3.245188" fullinertia="0.007141 0.054197 0.056111 0.000562 0.000255 2.4e-05" />
+                  <joint name="mz07/j4" pos="0 0 0" axis="1 0 0" range="-3.31612567 3.31612567" damping="0.3" frictionloss="0.3" armature="0.3" actuatorgravcomp="true" />
+                  <geom name="mz07/geom_4_" type="mesh" contype="0" conaffinity="0" group="2" density="0" material="mz07_link_4_mat" mesh="mz07_vis_link_4" />
+                  <body name="mz07/link_5" pos="0.25 0 0" gravcomp="1">
+                    <inertial pos="0 0 0" mass="0.501938" fullinertia="0.000539 0.000892 0.000962 1e-06 0.0 -1e-06" />
+                    <joint name="mz07/j5" pos="0 0 0" axis="0 1 0" range="-2.09439516 2.09439516" damping="0.1" frictionloss="0.1" armature="0.1" actuatorgravcomp="true" />
+                    <geom name="mz07/geom_5_vis_" type="mesh" contype="0" conaffinity="0" group="2" density="0" material="mz07_link_5_mat" mesh="mz07_vis_link_5" />
+                    <geom name="mz07/geom_5_" type="mesh" group="3" mesh="mz07_link_5" />
+                    <body name="mz07/link_6" pos="0.063 0 0" gravcomp="1">
+                      <inertial pos="0 0 0" mass="0.038575" fullinertia="0.0005 0.0005 0.0005 0.0 0.0 0.0" />
+                      <joint name="mz07/j6" pos="0 0 0" axis="1 0 0" range="-6.28318548 6.28318548" damping="0.1" frictionloss="0.1" armature="0.05" actuatorgravcomp="true" />
+                      <geom name="mz07/geom_6_vis_" type="mesh" contype="0" conaffinity="0" group="2" material="mz07_link_6_mat" mesh="mz07_vis_link_6" />
+                      <geom name="mz07/geom_6_" type="mesh" group="3" mesh="mz07_link_6" />
+                      <site name="mz07/link_tcp" pos="0.0195 0 0" quat="1 0 0 0" size="0.001" group="4" rgba="1 0 0 1" />
+                      <site name="mz07/attachment_site" pos="0.0195 0 0" quat="1 0 0 0" size="0.001" group="5" rgba="1 0 0 1" />
+                      <!-- iai gripper, mounted on the tool0 flange. Source (envs/starrobox_cafe_completed.xml)
+                           mounts it on Fairino's wrist3_link whose flange faces local +Z, via a 90deg
+                           X-rotation aligning the gripper's own +Y (forward) axis to that +Z. mz07's
+                           link_6 flange instead faces local +X, so this uses a -90deg Z-rotation
+                           instead, mapping the same gripper +Y forward axis onto link_6's +X. -->
+                      <body name="mz07/gripper/base" pos="0.1195 0 0" quat="0.7071068 0 0 -0.7071068">
+                        <inertial pos="0 0 0.0002" mass="0.6" diaginertia="0.001 0.001 0.001" />
+                        <geom name="mz07/upper_body" pos="0.000545159 0 0.0021" quat="0 1 0 0" type="mesh" contype="0" conaffinity="0" density="5" material="mz07_gripper_mat" mesh="mz07_iai_upper_body" />
+                        <geom name="mz07/lower_body" pos="0 -0.0410198 -0.0147173" quat="0 1 0 0" type="mesh" group="2" material="mz07_gripper_mat" mesh="mz07_iai_lower_body" />
+                        <geom name="mz07/right_side" pos="0 -0.0802952 0" quat="1 0 0 0" type="mesh" material="mz07_gripper_mat" mesh="mz07_iai_side" />
+                        <geom name="mz07/left_side" pos="-0.0765432 -0.0806754 0" quat="1 0 0 0" type="mesh" material="mz07_gripper_mat" mesh="mz07_iai_side" />
+                        <geom name="mz07/cover" pos="0 0.18463 -0.0489517" quat="0 0 0 1" type="mesh" material="mz07_gripper_mat" mesh="mz07_iai_gripper_cover" />
+                        <geom name="mz07/connector" pos="0 0.000735604 -0.0340329" quat="0 0 0 1" type="mesh" material="mz07_gripper_mat" mesh="mz07_iai_connect_part" />
+                        <body name="mz07/right_pinch_body">
+                          <joint name="mz07/right_pinch" pos="0.02 0 0" axis="-1 0 0" type="slide" limited="true" range="-0.015 0.015" actuatorfrclimited="false" actuatorgravcomp="true" armature="0.001" damping="0.2" />
+                          <geom name="mz07/right_pinch" pos="0.0243746 0.00245222 0.00147149" quat="0 0 0 1" type="mesh" friction="0" density="1" material="mz07_gripper_mat" mesh="mz07_iai_right_pinch" />
+                          <geom name="mz07/right_claw" pos="0.00833277 0.0089508 -0.00681747" quat="0 1 0 0" type="mesh" mass="1e-09" material="mz07_gripper_mat" mesh="mz07_iai_claw" />
+                        </body>
+                        <body name="mz07/left_pinch_body">
+                          <joint name="mz07/left_pinch" pos="-0.02 0 0" axis="1 0 0" type="slide" limited="true" range="-0.015 0.015" actuatorfrclimited="false" actuatorgravcomp="true" armature="0.001" damping="0.2" />
+                          <geom name="mz07/left_pinch" pos="-0.0232227 0.00214457 0.00154222" quat="0 0 0 1" type="mesh" friction="0" density="1" material="mz07_gripper_mat" mesh="mz07_iai_left_pinch" />
+                          <geom name="mz07/left_claw" pos="-0.00733679 0.00840771 0.009739" quat="0 0 0 1" type="mesh" mass="1e-09" material="mz07_gripper_mat" mesh="mz07_iai_claw" />
+                        </body>
+                      </body>
+                      <!-- elp camera, mounted on the tool0 flange alongside the gripper (sibling body,
+                           matching source's elp/base being a sibling of gripper/base on wrist3_link).
+                           Unlike the gripper (local +Y forward), this camera's own optical axis
+                           (MuJoCo cameras look along local -Z, and the site/geom quats here put that
+                           at local +Z) needs a Z->X remap instead of Y->X. A plain 90deg Y-rotation
+                           solves that but leaves an arbitrary 90deg roll about the new forward (X)
+                           axis, so this composes an extra 90deg X-rotation on top to correct it. -->
+                      <body name="mz07/elp/base" pos="0.067405 0 0" quat="0.5 0.5 0.5 0.5">
+                        <inertial pos="0 0 0" mass="0.08" diaginertia="5e-05 5e-05 5e-05" />
+                        <geom name="mz07/elp/body" pos="0.0288847 0.104262 -0.0295712" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" material="mz07_elp_mat" mesh="mz07_elp_cam_mesh" />
+                        <site name="mz07/elp/mount_site" pos="-0.0568629 0.0413539 0.0115667" quat="0.707107 0 0.707107 0" size="2e-06" group="5" rgba="0 1 0 1" />
+                        <site name="mz07/elp/optical_site" pos="0.00037384 0.0759343 0.00441231" size="2e-06" group="5" rgba="1 0 0 1" />
+                        <camera name="mz07/elp/rgb" pos="-9.76324e-05 0.0750667 0.0102622" quat="0 0.707107 -0.707107 0" fovy="70" />
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="mz07/exclude_1" body1="mz07/base_link" body2="mz07/link_1" />
+    <pair geom1="mz07/right_side" geom2="mz07/right_pinch" name="mz07/gripper_pair_1" />
+    <pair geom1="mz07/left_side" geom2="mz07/left_pinch" name="mz07/gripper_pair_2" />
+    <exclude name="mz07/gripper_exclude_1" body1="mz07/gripper/base" body2="mz07/right_pinch_body" />
+    <exclude name="mz07/gripper_exclude_2" body1="mz07/gripper/base" body2="mz07/left_pinch_body" />
+  </contact>
+
+  <equality>
+    <joint name="mz07/gripper_equality" joint1="mz07/right_pinch" joint2="mz07/left_pinch" polycoef="0 1 0 0 0" />
+  </equality>
+
+  <actuator>
+    <!-- Position (PD) servos, ctrlrange = joint range from the URDF, forcerange
+         capped at the URDF's 30 N*m effort limit. kp/kv are reasonable generic
+         starting gains, not tuned against the real robot -- retune if the arm
+         oscillates or feels sluggish. -->
+    <position name="mz07/act1" joint="mz07/j1" ctrlrange="-2.96705981 2.96705981" forcerange="-30 30" kp="300" kv="30" />
+    <position name="mz07/act2" joint="mz07/j2" ctrlrange="-1.39626344 2.356194555" forcerange="-30 30" kp="300" kv="30" />
+    <position name="mz07/act3" joint="mz07/j3" ctrlrange="-3.14159274 0.802851478" forcerange="-30 30" kp="300" kv="30" />
+    <position name="mz07/act4" joint="mz07/j4" ctrlrange="-3.31612567 3.31612567" forcerange="-30 30" kp="300" kv="30" />
+    <position name="mz07/act5" joint="mz07/j5" ctrlrange="-2.09439516 2.09439516" forcerange="-30 30" kp="300" kv="30" />
+    <position name="mz07/act6" joint="mz07/j6" ctrlrange="-6.28318548 6.28318548" forcerange="-30 30" kp="300" kv="30" />
+    <position name="mz07/gripper_actuator" joint="mz07/right_pinch" ctrllimited="true" ctrlrange="-0.015 0.015" kp="5" />
+  </actuator>
+</mujoco>
