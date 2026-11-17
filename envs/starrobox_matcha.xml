@@ -100,7 +100,6 @@
     <mesh name="cafe_fr3/iai_lower_body" file="gripper/iai/lower_body.stl" scale="0.001 0.001 0.001" />
     <mesh name="cafe_fr3/iai_left_pinch" file="gripper/iai/left_pinch.stl" scale="0.001 0.001 0.001" />
     <mesh name="cafe_fr3/iai_right_pinch" file="gripper/iai/right_pinch.stl" scale="0.001 0.001 0.001" />
-    <mesh name="cafe_fr3/iai_cable" file="gripper/iai/cable.stl" scale="0.001 0.001 0.001" />
     <mesh name="cafe_fr3/iai_side" file="gripper/iai/gripper_side.stl" scale="0.001 0.001 0.001" />
     <mesh name="cafe_fr3/iai_claw" file="gripper/iai/left_gum_claw.stl" scale="0.001 0.001 0.001" />
     <mesh name="cafe_fr3/iai_gripper_cover" file="gripper/iai/gripper_cover.stl" scale="0.001 0.001 0.001" />
@@ -301,7 +300,6 @@
                           <inertial pos="0 0 0.0002" mass="0.6" diaginertia="0.001 0.001 0.001" />
                           <geom name="cafe_fr3/upper_body" pos="0.000545159 0 0.0021" quat="0 1 0 0" type="mesh" contype="0" conaffinity="0" density="5" material="white" mesh="cafe_fr3/iai_upper_body" />
                           <geom name="cafe_fr3/lower_body" pos="0 -0.0410198 -0.0147173" quat="0 1 0 0" type="mesh" group="2" material="white" mesh="cafe_fr3/iai_lower_body" />
-                          <geom name="cafe_fr3/cable" pos="0.00559816 -0.0699537 -0.0479794" quat="0.707107 0 0.707107 0" type="mesh" group="2" material="white" mesh="cafe_fr3/iai_cable" />
                           <geom name="cafe_fr3/right_side" pos="0 -0.0802952 0" quat="1 0 0 0" type="mesh" material="white" mesh="cafe_fr3/iai_side" />
                           <geom name="cafe_fr3/left_side" pos="-0.0765432 -0.0806754 0" quat="1 0 0 0" type="mesh" material="white" mesh="cafe_fr3/iai_side" />
                           <geom name="cafe_fr3/cover" pos="0 0.18463 -0.0489517" quat="0 0 0 1" type="mesh" material="white" mesh="cafe_fr3/iai_gripper_cover" />
