@@ -86,6 +86,9 @@
     <mesh name="o6_base_2" file="linkerbot/o6_right/o6_base_2.stl" />
     <material name="o6_base_3_mat" specular="0.3" rgba="0.922 0.922 0.896 1" />
     <mesh name="o6_base_3" file="linkerbot/o6_right/o6_base_3.stl" />
+    <mesh name="cafebox_frame" file="box/cafebox/cafebox_frame.stl" />
+    <mesh name="cafebox_hardware" file="box/cafebox/cafebox_hardware.stl" />
+    <material name="cafebox_metal_mat" specular="0.4" rgba="0.352 0.352 0.352 1" />
   </asset>
 
   <worldbody>
@@ -236,6 +239,17 @@
       <geom name="low_back_pole" pos="0.818915 0.524148 0.499983" quat="0.707107 0 0.707107 0" type="mesh" material="Material" mesh="box_lowback_pole" />
       <geom name="mid_back_pole" pos="0.810552 0.531 1.2423" quat="0.707107 0 0.707107 0" type="mesh" material="Material" mesh="box_midback_pole" />
       <geom name="top_mid_pole" pos="0.823036 0.909735 1.63277" quat="0.707107 0 0.707107 0" type="mesh" material="Material" mesh="box_top_mid_pole" />
+    </body>
+    <body name="cafebox" pos="2.7050 1.4216 0" quat="-0.382683 0.000000 0.000000 0.923880">
+      <geom name="cafebox_frame" type="mesh" mesh="cafebox_frame" material="table_wood_mat" group="2" contype="0" conaffinity="0" />
+      <geom name="cafebox_hardware" type="mesh" mesh="cafebox_hardware" material="cafebox_metal_mat" group="2" contype="0" conaffinity="0" />
+      <geom name="cafebox_panel_0" type="box" pos="0.4500 -0.4225 0.5322" size="0.4200 0.0025 0.4202" material="table_wood_mat" />
+      <geom name="cafebox_panel_1" type="box" pos="0.4500 0.0275 0.5322" size="0.4200 0.0025 0.4202" material="table_wood_mat" />
+      <geom name="cafebox_panel_2" type="box" pos="-0.0025 -0.1950 0.5326" size="0.0025 0.1950 0.4199" material="table_wood_mat" />
+      <geom name="cafebox_panel_3" type="box" pos="0.8975 -0.1950 0.5326" size="0.0025 0.1950 0.4199" material="table_wood_mat" />
+      <geom name="cafebox_counter" type="box" pos="0.4500 -0.2780 1.0215" size="0.4500 0.3080 0.0090" material="table_wood_mat" />
+      <geom name="cafebox_panel_5" type="box" pos="0.4500 0.0275 1.4912" size="0.4200 0.0025 0.4612" material="table_wood_mat" />
+      <geom name="cafebox_panel_6" type="box" pos="0.4500 -0.1700 1.9915" size="0.4500 0.2000 0.0090" material="table_wood_mat" />
     </body>
   </worldbody>
 
