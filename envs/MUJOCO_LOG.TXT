@@ -1,6 +1,0 @@
-Wed May  6 16:48:37 2026
-ERROR: treeFirst: contact 0 is between two static bodies
-
-Wed May  6 16:48:55 2026
-ERROR: treeFirst: contact 0 is between two static bodies
-
